@@ -5,6 +5,20 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[int]
         """
+        # ⚠️ Issues in Your Approach (Performance-wise):
+        # Time Complexity:
+
+        # newlist = nums1 + nums2 → O(n + m)
+
+        # newlist.sort() → O((n + m) log(n + m))
+
+        # n1 in nums1 and n1 in nums2 → both are O(n) in worst case, because in on a list is linear.
+
+        # So overall time complexity is O((n + m) log(n + m) + n(n + m)) → not optimal for large inputs.
+
+        # Unnecessary Sort:
+
+        # Sorting isn’t required here. You only need to find common unique elements.
         # newlist = nums1 + nums2
         # newlist.sort()
         # list = []
@@ -16,6 +30,7 @@ class Solution(object):
         
         # return list
 
+        # this code will be  O(n + m) Time Complexcity
         set1 = set(nums1)
         set2 = set(nums2)
         result = []
